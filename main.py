@@ -41,7 +41,7 @@ def living():
     elif totalCost < totalSalary and safeIncluded > safe:
         return finalStatement2
 
-    elif totalCost < totalSalary and safeIncluded < safe:
+    elif totalCost <= totalSalary and safeIncluded < safe:
         return finalStatement3 
 
     else: print(ValueError)
