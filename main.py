@@ -1,12 +1,13 @@
-######################################################
-### living costs in Ontario for a studio apartment ###
-######################################################
+###############################
+### living costs in Ontario ###
+###############################
 
 costOfRent = "what is the rent of the place you're looking at?   "
 avgHydro = 125
 hourlyWage = "what is your hourly wage?     "
 hoursWorked = "how many hours do you work in one week?   "
 costOfInternet = "what is the cost of your internet?    "
+phonePlan = "how much do you pay each month for a mobile phone?      "
 costOfFood = "how much do you spend on food per month?     "
 costOfLuxuries = "how much do you spend on luxuries (i.e. makeup, clothes, video games, electronics, etc)?      "
 otherCosts = "put any other costs you factor in (in values).    "
@@ -18,6 +19,7 @@ def living():
     wage = float(input(hourlyWage))
     hours = int(input(hoursWorked))
     internet = float(input(costOfInternet))
+    cell = float(input(phonePlan))
     food = float(input(costOfFood))
     lux = float(input(costOfLuxuries))
     safe = float(input(safetyNet))
@@ -38,7 +40,7 @@ def living():
         return finalStatement2
 
     else: print(ValueError)
-    
+
 x = living()
 print(x)
 
