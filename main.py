@@ -10,6 +10,7 @@ costOfInternet = "what is the cost of your internet?    "
 phonePlan = "how much do you pay each month for a mobile phone?      "
 costOfFood = "how much do you spend on food per month?     "
 costOfLuxuries = "how much do you spend on luxuries (i.e. makeup, clothes, video games, electronics, etc)?      "
+costOfTransportation = "how much do you spend on a bus pass or car insurance each month?   "
 otherCosts = "put any other costs you factor in (in values).    "
 
 safetyNet = "how much money per month do you want to have left over?      "
@@ -22,11 +23,12 @@ def living():
     cell = float(input(phonePlan))
     food = float(input(costOfFood))
     lux = float(input(costOfLuxuries))
+    transport = float(input(costOfTransportation))
     safe = float(input(safetyNet))
     other = float(input(otherCosts))
 
     totalSalary = hours * wage * 4
-    totalCost = rent + internet + cell + food + lux + avgHydro + other
+    totalCost = rent + internet + cell + food + lux + avgHydro + transport + other
 
     diff = abs(totalCost - totalSalary)
     safeIncluded = abs(diff - safe)
@@ -48,4 +50,19 @@ def living():
 
 x = living()
 print(x)
+
+def repeat():
+    q = input("start over? (y/n)    ")
+
+    if q.lower() == "y":
+        return living()
+    
+    elif q.lower() == "n":
+        return None
+    
+    else: print(ValueError)
+
+y = repeat()
+print(y)
+
 
