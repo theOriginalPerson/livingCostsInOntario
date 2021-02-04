@@ -38,6 +38,7 @@ def living():
         return finalStatement2
 
     else: print(ValueError)
-
+    
 x = living()
 print(x)
+
