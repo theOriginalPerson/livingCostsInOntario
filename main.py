@@ -1,21 +1,33 @@
-###############################
-### living costs in Ontario ###
-###############################
+###################################################################
+### ///////////////// living costs in Ontario ///////////////// ###
+###################################################################
 
-costOfRent = "what is the rent of the place you're looking at?   "
+#################
+### questions ###
+#################
+
+costOfRent = "what is the rent of the place you're looking at? ---> "
+hourlyWage = "what is your hourly wage? ---> "
+hoursWorked = "how many hours do you work in one week? ---> "
+costOfInternet = "what is the cost of your internet? ---> "
+phonePlan = "how much do you pay each month for a mobile phone? ---> "
+costOfFood = "how much do you spend on food per month? ---> "
+costOfLuxuries = "how much do you spend on luxuries (i.e. makeup, clothes, video games, electronics, etc)? ---> "
+costOfTransportation = "how much do you spend on a bus pass or car insurance each month? ---> "
+otherCosts = "put any other costs you factor in (in values). ---> "
+safetyNet = "how much money per month do you want to have left over? ---> "
+
+#######################
+### costs of living ###
+#######################
+
 avgHydro = 125
-hourlyWage = "what is your hourly wage?     "
-hoursWorked = "how many hours do you work in one week?   "
-costOfInternet = "what is the cost of your internet?    "
-phonePlan = "how much do you pay each month for a mobile phone?      "
-costOfFood = "how much do you spend on food per month?     "
-costOfLuxuries = "how much do you spend on luxuries (i.e. makeup, clothes, video games, electronics, etc)?      "
-costOfTransportation = "how much do you spend on a bus pass or car insurance each month?   "
-otherCosts = "put any other costs you factor in (in values).    "
-
-safetyNet = "how much money per month do you want to have left over?      "
 
 def living():
+    ########################
+    ### formal variables ###
+    ########################
+
     rent = float(input(costOfRent))
     wage = float(input(hourlyWage))
     hours = int(input(hoursWorked))
@@ -32,6 +44,10 @@ def living():
 
     diff = abs(totalCost - totalSalary)
     safeIncluded = abs(diff - safe)
+
+    #############
+    ### final ###
+    #############
 
     finalStatement1 = "this is not a good idea, your total salary is " +  str(round(totalSalary, 2)) + "$, and this is less than your total costs of living, which are " + str(round(totalCost, 2)) + "$. Which means that you will be " + str(round(diff, 2)) + "$ in the hole."
     finalStatement2 = "this is decent, because it still leaves you with enough money to live. Your total salary is " + str(round(totalSalary, 2)) + "$, and your total costs for the month are " + str(round(totalCost, 2)) + "$. Afterwards, you will be left with " + str(round(diff, 2)) + "$"
@@ -55,7 +71,7 @@ def repeat():
     q = input("start over? (y/n)    ")
 
     if q.lower() == "y":
-        return living()
+        return living(), repeat()
     
     elif q.lower() == "n":
         return None
