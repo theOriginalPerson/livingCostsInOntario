@@ -69,14 +69,14 @@ print(x)
 
 def repeat():
     q = input("start over? (y/n)    ")
-
+    n = "hope this helped... "
     if q.lower() == "y":
         return living(), repeat()
     
     elif q.lower() == "n":
-        return None
+        return n
     
-    else: print(ValueError)
+    else: return repeat()
 
 y = repeat()
 print(y)
