@@ -64,22 +64,20 @@ def living():
 
     else: print(ValueError)
 
-x = living()
-print(x)
+print(living())
 
 def repeat():
     q = input("start over? (y/n)    ")
     n = "hope this helped... "
-    
+
     if q.lower() == "y":
-        return living(), repeat()
+        print(living())
     
     elif q.lower() == "n":
         return n
     
     else: return repeat()
 
-y = repeat()
-print(y)
+repeat()
 
 
